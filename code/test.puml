@@ -1,0 +1,55 @@
+@startuml
+
+Class Epreuves{
+    -id: Int
+    -nom: String
+    -categorie: String
+    -profil: String
+    -lieu: String
+    -date: DateTime
+    +nouvelle_epreuve()
+    +suppression_epreuve()
+}
+Class Resultat{
+    -id: Int
+    -nom_Participant: String
+    -categorie: String
+    -profil: String
+    -passage: Object
+    +importList()
+    +exportList()
+}
+Class Participant{
+    -id: Int
+    -photo:String
+    -prenom: String
+    -nom: String
+    -date_de_naissance: DateTime
+    -age: Interger
+    -categorie: String
+    -profil: String
+    +nouveau_participant()
+    +suppression_participant()
+
+}
+Class Participants{
+    -id: Int
+    -nom_Participants: Object
+    -categorie: String
+    -profil: String
+    +selectionDesParticipant()
+    +deselectionDesParticipant()
+}
+Class Passage{
+    -id: Int
+    -participant: String
+    -nb: Int
+    -temps: Object Int 
+}
+
+Participants *-- Participant
+Resultat *-- Participants
+Epreuves -- Passage
+Passage <|-- Participant
+
+@enduml

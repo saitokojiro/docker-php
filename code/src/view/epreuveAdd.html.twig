@@ -1,0 +1,70 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+    <form action="" method="post" enctype="multipart/form-data">
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Nom de l'épreuve</label>
+                <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom de l'épreuve">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Lieu</label>
+                <input type="text" class="form-control" id="Lieu" name="Lieu" placeholder="Lieu">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">inscription jusqu'au</label>
+                <input type="date" class="form-control" id="lifeDate" name="lifeDate">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-row">
+                <div class="form-group col-md-10">
+                    <label for="inputCate">Catégorie</label>
+                    <select id="inputCate" class="form-control" name="status">
+                        <option selected>Choose...</option>
+                        <option value="1">En cours</option>
+                        <option value="2">Close</option>
+                        <option value="3">Resultat</option>
+                        <option value="4">Annulé</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-10">
+                    <label for="inputCate">Catégorie</label>
+                    <select id="inputCate" class="form-control" name="categorie">
+                        <option selected>Choose...</option>
+                        <option value="1">M1</option>
+                        <option value="2">M2</option>
+                        <option value="3">M3</option>
+                        <option value="4">Senior</option>
+                        <option value="5">V</option>
+                        <option value="6">Snow</option>
+                        <option value="7">Nouvelle Glisse</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-10">
+                    <label for="inputProf">Profil</label>
+                    <select id="inputProf" class="form-control" name="profil">
+                        <option selected>Choose...</option>
+                        <option value="1">ASVP : ex-pervenches</option>
+                        <option value="2">Open: conjoints et/ou enfants</option>
+                        <option value="3">Gardes-champêtres</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">image</label>
+                <input type="text" class="form-control" id="img" name="img" placeholder="img">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+    <div class="display">
+        <div>
+            <a href="/participants">Back</a>
+            <a href="">dowload</a>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                        Profil Participant
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><img src="../public/image/{{ pList.photo }}"></li>
+                        <li class="list-group-item">Nom : {{ pList.nom }} Prenom : {{ pList.pronom }}</li>
+                        <li class="list-group-item">naissance: {{ pList.date_de_naissance }}</li>
+                        <li class="list-group-item">categorie: {{ pList.categorie }}</li>
+                        <li class="list-group-item">categorie: {{ pList.profil }}</li>
+                        <li class="list-group-item">email: {{ pList.email }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

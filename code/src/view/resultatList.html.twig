@@ -1,0 +1,68 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+    <div class="display">
+        <div class="btn-ctl">create new event</div>
+        <div class="btn-ctl">List event</div>
+        <br>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div> import CSV
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <input type="file" name="csv">
+
+                        <button type="submit">ok</button>
+                    </form>
+                </div>
+                <div class="col-12">
+                    <table class="table">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">categorie</th>
+                            <th scope="col">profil</th>
+                            <th scope="col">email</th>
+                            <th scope="col">date de naissance</th>
+                            <th scope="col">temps 1</th>
+                            <th scope="col">temps 2</th>
+                            <th scope="col">total</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for Dap in pList %}
+                            <!--
+								<span>{{ Dap.id }}</span>
+								<span>{{ Dap.nom }}</span>
+								<span>{{ Dap.prenom }}</span>-->
+                            <tr>
+                                <th scope="row">
+                                    <a href="/participant/id={{ Dap.id }}">{{ Dap.id }}</a>
+                                </th>
+                                <td>{{ Dap.nom }}</td>
+                                <td>{{ Dap.prenom }}</td>
+                                <td>{{ Dap.categorie }}</td>
+                                <td>{{ Dap.profil }}</td>
+                                <td>{{ Dap.email }}</td>
+                                <td>{{ Dap.date_de_naissance }}</td>
+                                <td>{{ Dap.passage1 }}</td>
+                                <td>{{ Dap.passage2 }}</td>
+                                <td>{{ Dap.passage1 + Dap.passage2 }}</td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+{% endblock %}

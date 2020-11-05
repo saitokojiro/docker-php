@@ -1,0 +1,40 @@
+# config/routes.yaml
+index:
+  path: /
+  defaults: { controller: 'App\controller\IndexController::index' }
+participants:
+  path: /participants
+  defaults:
+    { controller: 'App\controller\ParticipantController::participantsViewList' }
+participant:
+  path: /participant/id={id}
+  defaults:
+    { controller: 'App\controller\ParticipantController::participantView' }
+participantAdd:
+  path: /participant/new
+  defaults:
+    { controller: 'App\controller\ParticipantController::participantAdd' }
+participantCSV:
+  path: /participant/csv
+  defaults:
+    { controller: 'App\controller\CsvController::csvExport'}
+participantCSVImport:
+  path: /participant/csv/import
+  defaults:
+    { controller: 'App\controller\CsvController::csvImport'}
+EpreuveList:
+  path: /listepreuve
+  defaults:
+    { controller: 'App\controller\EpreuveController::epreuveList'}
+EpreuveAdd:
+  path: /epreuve/new
+  defaults:
+    { controller: 'App\controller\EpreuveController::epreuveAdd'}
+EpreuveSelected:
+  path: /epreuve/id={id}
+  defaults:
+    { controller: 'App\controller\EpreuveController::epreuveSelected'}
+Resultat:
+  path: /epreuve/resultat/id={id}
+  defaults:
+    { controller: 'App\controller\ResultatController::viewAllParticipant'}

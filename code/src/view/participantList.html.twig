@@ -1,0 +1,56 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+    <div class="display">
+        <div class="btn-ctl">create new event</div>
+        <div class="btn-ctl">List event</div>
+        <br>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div><a href="/participant/new">ajout d'un participant</a></div>
+                <div class="col-12">
+                    <table class="table">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">categorie</th>
+                            <th scope="col">profil</th>
+                            <th scope="col">email</th>
+                            <th scope="col">date de naissance</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for Dap in pList %}
+                            <!--
+								<span>{{ Dap.id }}</span>
+								<span>{{ Dap.nom }}</span>
+								<span>{{ Dap.prenom }}</span>-->
+                            <tr>
+                                <th scope="row">
+                                    <a href="/participant/id={{ Dap.id }}">{{ Dap.id }}</a>
+                                </th>
+                                <td>{{ Dap.nom }}</td>
+                                <td>{{ Dap.prenom }}</td>
+                                <td>{{ Dap.categorie }}</td>
+                                <td>{{ Dap.profil }}</td>
+                                <td>{{ Dap.email }}</td>
+                                <td>{{ Dap.date_de_naissance }}</td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+{% endblock %}
